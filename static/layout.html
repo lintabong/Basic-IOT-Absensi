@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-controller">
+            <!-- start navbar -->
+            <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    Logo
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="icon-menu"></span>
+                    </button>
+                    <ul class="navbar-nav mr-lg-2">
+                        <li class="nav-item nav-search d-none d-lg-block">
+                            <div class="input-group">
+                                <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                    <span class="input-group-text" id="search">
+                                        <i class="icon-search"></i>
+                                    </span>
+                                </div>
+                             </div>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item">
+                            Login sebagai : {{ name }}
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </nav>
+            <!-- end navbar -->
+
+            <div class="container-fluid page-body-wrapper">
+                <!-- start sidebar -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('dashboard') }}">
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('attendance') }}">
+                                <span class="menu-title">Absensi</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('userlist') }}">
+                                <span class="menu-title">Daftar Pegawai</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('newuser') }}">
+                                <span class="menu-title">Tambah Pegawai</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- end sidebar -->
+
+                <!-- start content -->
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+                <!-- end content -->
+
+            </div>
+        </div>
+
+        <!-- javascript -->
+        <script src="{{url_for('static',filename='vendors/js/vendor.bundle.base.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/chart.js/Chart.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/datatables.net/jquery.dataTables.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+        <script src="{{url_for('static',filename='js/dataTables.select.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/off-canvas.js')}}"></script>
+        <script src="{{url_for('static',filename='js/hoverable-collapse.js')}}"></script>
+        <script src="{{url_for('static',filename='js/template.js')}}"></script>
+        <script src="{{url_for('static',filename='js/settings.js')}}"></script>
+        <script src="{{url_for('static',filename='js/todolist.js')}}"></script>
+        <script src="{{url_for('static',filename='js/dashboard.js')}}"></script>
+        <script src="{{url_for('static',filename='js/Chart.roundedBarCharts.js')}}"></script>
+    </body>
+</html>
