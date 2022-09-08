@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template, redirect, url_for, session, flash
+from flask        import Flask, request, render_template, redirect, url_for, session, flash
+from datetime     import datetime
 import jwt
-from datetime import datetime
 import pyrebase
 import uuid
+
 from protected import login_required
 from firebase_config import firebaseConfig
 
