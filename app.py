@@ -1,6 +1,5 @@
 from flask        import Flask, request, render_template, redirect, url_for, session, flash
 from datetime     import datetime
-import jwt
 import pyrebase
 import uuid
 
@@ -23,7 +22,6 @@ month = ['Januari', 'Pebruari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-
         return render_template('static/login.html')
 
     if request.method == 'POST':
