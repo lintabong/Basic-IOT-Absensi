@@ -1,5 +1,2 @@
-# Basic-IOT-Absensi
+This divisional Flask Structure representating
 
-Tech: Bootstrap, noSQL Firebase Realtime Database, Flask Python, Jinja2, ESP8266, RFID Scanner
-
-only show 50% of my product
