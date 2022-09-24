@@ -1,0 +1,41 @@
+{% extends "static/layout.html" %}
+
+{% block head %}
+    <title> Tambah User </title>
+{% endblock %}
+
+{% block content %}
+     <div class="row">
+        <div class="col-md grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Tambah Pegawai</h4>
+                        <form class="forms-sample" action="{{ url_for('newuser') }}" method="post">
+                            <div class="form-group">
+                                <label>RFID</label>
+                                <div class="input-group col-4 px-0">
+                                    <input type="text" class="form-control" name="id" value="{{ rfid }}" placeholder="RFID">
+                                    <span class="input-group-append">
+                                        <input class="file-upload-browse btn btn-primary" type="submit" value="Get Data" formmethod="get">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="name" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="address" placeholder="Alamat">
+                            </div>
+                            <div class="form-group">
+                                <label>Nomer Handphone</label>
+                                <input type="text" class="form-control" name="phone" placeholder="Nomer Handphone">
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+     </div>
+{% endblock %}
